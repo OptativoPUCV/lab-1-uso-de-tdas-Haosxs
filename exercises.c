@@ -132,15 +132,15 @@ int parentesisBalanceados(char *cadena) {
        char c = cadena[i];
 
        if (c == '(' || c == '{' || c == '[') {
-           push(pila, (void *)(long)c);
+           push(pila, (char *) c);
        }
        else if (c == ')' || c == '}' || c == ']') {
-           char *top_elem = (char *)top(pila);
-
-           if (!top_elem || 
-               (c == ')' && *top_elem != '(') || 
-               (c == '}' && *top_elem != '{') || 
-               (c == ']' && *top_elem != '[')) {
+         if (top(pila) == NULL) return 0;
+         char tope = (char)pop(pila);
+           if ((c == ')' && tope != '(') || 
+               (c == '}' && tope != '{') || 
+               (c == ']' && tope != '[')) 
+               {
                return 0;
            }
 
