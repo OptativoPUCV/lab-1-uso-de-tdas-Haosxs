@@ -43,7 +43,6 @@ Al finalizar retorna la lista creada.
 
 List *crea_lista() {
    List *L = create_list();
-   if (L == NULL ) return NULL;
    int i = 1;
    for(i; i <= 10; i++){
       int *elemento;
@@ -85,11 +84,11 @@ void eliminaElementos(List*L, int elem){
    int i = 0;
    while(L[i]!= NULL)
    {
-      if (L[i] == elem )
+      if (L[i] == elem)
       {
          popCurrent(L, i);
       }
-      i++
+      i++;
    }
 
 }
