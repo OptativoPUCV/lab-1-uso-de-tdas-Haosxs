@@ -206,3 +206,26 @@ exercises.c:130:8: error: unused variable 'recorrer' [-Werror=unused-variable]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 bba07a3
+Sun, Mar 23, 2025  2:37:39 PM: 
+ exercises.c | 1 -
+ 1 file changed, 1 deletion(-)
+In file included from test.c:5:0:
+exercises.c: In function 'parentesisBalanceados':
+exercises.c:134:25: error: passing argument 2 of 'push' makes pointer from integer without a cast [-Werror=int-conversion]
+          push(auxiliar, cadena[i]);
+                         ^~~~~~
+In file included from exercises.c:7:0,
+                 from test.c:5:
+stack.h:11:6: note: expected 'void *' but argument is of type 'char'
+ void push(Stack *stack, void *data) { pushFront(stack, data); }
+      ^~~~
+In file included from test.c:5:0:
+exercises.c:138:26: error: initialization makes integer from pointer without a cast [-Werror=int-conversion]
+          char elemento = top(auxiliar);
+                          ^~~
+exercises.c:139:23: error: comparison between pointer and integer [-Werror]
+          if (elemento == NULL) return 0;
+                       ^~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+481705d
