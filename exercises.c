@@ -126,12 +126,14 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 */
 
 int parentesisBalanceados(char *cadena) {
-   if(get_size(cadena) % 2 == 0)
+   int recorrer = 0;
+   for (int i = 0; cadena[i] != '\0'; i++)
    {
-      return 1;
+      if (cadena[i] == '(') recorrer++;
+      if (cadena[i] == ')') recorrer--;
    }
    
-   return 0;
+   return recorrer == 0;
 }
 
 /*asiudkoaaaaaaaaaaaaaaaaaaaaaa
