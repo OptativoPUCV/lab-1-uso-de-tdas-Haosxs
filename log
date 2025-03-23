@@ -100,3 +100,28 @@ Sat, Mar 22, 2025 11:39:02 PM:
  tests:  0|3
 total_score: 20/70
 41025ba
+Sat, Mar 22, 2025 11:45:04 PM: 
+ exercises.c | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
+In file included from test.c:5:0:
+exercises.c: In function 'eliminaElementos':
+exercises.c:85:4: error: statement with no effect [-Werror=unused-value]
+    for(i; i <get_size(L); i++)
+    ^~~
+exercises.c:87:7: error: invalid use of undefined type 'struct List'
+       int comparador = *L[i];
+       ^~~
+exercises.c:87:26: error: dereferencing pointer to incomplete type 'List {aka struct List}'
+       int comparador = *L[i];
+                          ^
+exercises.c:90:10: error: too many arguments to function 'popCurrent'
+          popCurrent(L, i);
+          ^~~~~~~~~~
+In file included from exercises.c:6:0,
+                 from test.c:5:
+arraylist.h:32:7: note: declared here
+ void *popCurrent(List *L);
+       ^~~~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+4f0c85c
