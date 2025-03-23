@@ -131,3 +131,14 @@ Sat, Mar 22, 2025 11:47:41 PM:
  tests:  3|2
 total_score: 40/70
 516bcf1
+Sat, Mar 22, 2025 11:48:23 PM: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:0:
+exercises.c: In function 'crea_lista':
+exercises.c:48:17: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+       *elemento = (int *) malloc(sizeof(int));
+                 ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+008aa27
