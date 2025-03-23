@@ -7,7 +7,7 @@
 #include "stack.h"
 
 //#include "exercises.h"
-
+// Estudiante: Fernando Cárdenas
 //Funciones auxiliares que puedes utilizar para debuggear tus ejercicios
 //NO MODIFICAR
 void imprime_lista(List *L) {
