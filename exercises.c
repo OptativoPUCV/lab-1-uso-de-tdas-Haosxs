@@ -41,14 +41,15 @@ debes reservar memoria para cada elemento que agregues.
 Al finalizar retorna la lista creada.
 */
 
-List* crea_lista() {
-
-   List* L = create_list();
+List *crea_lista() {
+   List *L = create_list();
+   if (L == NULL ) return NULL;
    int i = 1;
    for(i; i <= 10; i++){
-      int *elemento = (int *) malloc(sizeof(int));
+      int *elemento;
+      *elemento = (int *) malloc(sizeof(int));
       *elemento = i;
-      pushFront(L, &elemento);
+      pushCurrent(L, &elemento);
    }
 
    return L;
@@ -64,8 +65,7 @@ int sumaLista(List *L) {
    int *elemento = first(L);
    while (elemento != NULL)
    {
-      suma += *elemento;
-      elemento += next(&L);      
+      suma += *elemento;   
    }
    if (suma > 0) return suma;
    return 0;
@@ -82,6 +82,16 @@ posiciona en el elemento anterior.
 
 void eliminaElementos(List*L, int elem){
 
+   int i = 0;
+   while(L[i]!= NULL)
+   {
+      if (L[i] == elem )
+      {
+         popCurrent(L, i);
+      }
+      i++
+   }
+
 }
 
 /*
@@ -91,7 +101,21 @@ El orden de ambas pilas se debe mantener.
 Puedes usar una pila auxiliar.
 */
 
-void copia_pila(Stack* P1, Stack* P2) {
+void copia_pila(Stack* P1, Stack* P2) 
+{
+   Stack *pilaauxiliar = create_stack();
+   while(top(P1)!= NULL)
+   {
+      push(pilaauxiliar, top(P1));
+      pop(top(P1));
+   }
+   while(top(pilaauxiliar) != NULL)
+   {
+      push(P2, top(pilaauxiliar));
+      push(P1, top(pilaauxiliar));
+      pop(pilaauxiliar);
+   }
+
 }
 
 /*
@@ -105,3 +129,5 @@ int parentesisBalanceados(char *cadena) {
    return 0;
 }
 
+/*asldmasldasdasddddddddddddddddd
+saddddddddddddddddddddddddddddd*/
