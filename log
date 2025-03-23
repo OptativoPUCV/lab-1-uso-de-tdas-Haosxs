@@ -94,3 +94,9 @@ arraylist.h:32:7: note: declared here
 cc1.exe: all warnings being treated as errors
 Compilation failed
 845bcce
+Sat, Mar 22, 2025 11:39:02 PM: 
+ exercises.c | 20 +++++---------------
+ 1 file changed, 5 insertions(+), 15 deletions(-)
+ tests:  0|3
+total_score: 20/70
+41025ba

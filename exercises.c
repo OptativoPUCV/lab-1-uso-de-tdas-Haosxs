@@ -43,10 +43,9 @@ Al finalizar retorna la lista creada.
 
 List *crea_lista() {
    List *L = create_list();
-   int i = 1;
-   for(i; i <= 10; i++){
+   for(int i = 1; i <= 10; i++){
       int *elemento;
-      *elemento = (int *) malloc(sizeof(int));
+      elemento = (int *) malloc(sizeof(int));
       *elemento = i;
       pushCurrent(L, &elemento);
    }
@@ -80,16 +79,7 @@ posiciona en el elemento anterior.
 */
 
 void eliminaElementos(List*L, int elem){
-
-   int i = 0;
-   while(L[i]!= NULL)
-   {
-      if (L[i] == elem)
-      {
-         popCurrent(L, i);
-      }
-      i++;
-   }
+   
 
 }
 
@@ -106,7 +96,7 @@ void copia_pila(Stack* P1, Stack* P2)
    while(top(P1)!= NULL)
    {
       push(pilaauxiliar, top(P1));
-      pop(top(P1));
+      pop(P1);
    }
    while(top(pilaauxiliar) != NULL)
    {
@@ -114,7 +104,6 @@ void copia_pila(Stack* P1, Stack* P2)
       push(P1, top(pilaauxiliar));
       pop(pilaauxiliar);
    }
-
 }
 
 /*
@@ -128,5 +117,5 @@ int parentesisBalanceados(char *cadena) {
    return 0;
 }
 
-/*asldmasldasdasddddddddddddddddd
-saddddddddddddddddddddddddddddd*/
+/*asiudkoaaaaaaaaaaaaaaaaaaaaaa
+sadddddddddddddddddddddddddddddd*/
