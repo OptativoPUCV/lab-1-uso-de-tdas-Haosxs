@@ -2,3 +2,27 @@ Sat, Mar 22, 2025 10:33:09 PM:
  tests:  0|5
 total_score: 0/70
 3f6cb15
+Sat, Mar 22, 2025 10:46:56 PM: 
+ exercises.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+In file included from test.c:5:0:
+exercises.c: In function 'crea_lista':
+exercises.c:48:4: error: statement with no effect [-Werror=unused-value]
+    for(i; i <= 10; i++){
+    ^~~
+exercises.c: In function 'sumaLista':
+exercises.c:68:24: error: passing argument 1 of 'next' from incompatible pointer type [-Werror=incompatible-pointer-types]
+       elemento += next(&L);
+                        ^
+In file included from exercises.c:6:0,
+                 from test.c:5:
+arraylist.h:14:7: note: expected 'List * {aka struct List *}' but argument is of type 'List ** {aka struct List **}'
+ void* next(List *L);
+       ^~~~
+In file included from test.c:5:0:
+exercises.c:68:16: error: invalid operands to binary + (have 'int *' and 'void *')
+       elemento += next(&L);
+                ^~ ~~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+61dea1f
